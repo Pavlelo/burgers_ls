@@ -1,0 +1,217 @@
+.slider {
+    background-image: linear-gradient(to top, #f9b43b, #eb8c38, #f9b43b) ;
+    background-size: object-fit;
+}
+.slider__list {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.slider__item {
+    &:nth-child(odd) {
+       width: 10%;
+       align-items: center ;
+       display: flex;
+       justify-content: center;
+    }
+    &:nth-child(even) {
+        width: 80%;
+        align-items: center ;
+        display: flex;
+        justify-content: center;
+    }
+}
+.slider__arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+    &.slider__arrow--l{
+        transform: rotate(90deg);
+    }
+    &.slider__arrow--r{
+        transform: rotate(-90deg);
+    }
+}
+.cons__dropdown {
+    background-color: #f6fbfd;
+    box-shadow: 0px 0px 10px 0px rgba(23, 59, 117, 0.55);
+    z-index: 10;
+    border-radius: 5px 0 5px 5px;
+    text-align: left;
+    padding: 15px 10px;
+    position: absolute;
+    margin-top: 11px;
+    opacity: 0;
+    right: 9999px;
+    transition: opacity .3s;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;    
+ 
+}
+.burger_cons {
+    width: 90px;
+    height: 90px;
+    
+    border-radius: 5px;
+    background-color: #e35028;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:hover .cons__dropdown{
+        right:985px;
+        opacity: unset;
+        transition: .3;
+        padding:40px;
+        top: 70px;
+       
+  
+    
+    }
+}
+.burger_cons_icon {
+    width: 46px;
+    height: 44px;
+}
+.section__title.section__title_white.section__title_white_cons {
+    font-size: unset;
+    margin: 0 auto;
+}
+.burger_weight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    opacity: .5;    
+ }
+ .kkal {
+    font-family: 'Gagalin-Regular';
+    font-size: 17px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+
+ }
+ .kkal_desc {
+    width: 31px;
+    height: 10px;
+    font-family: 'Gagalin-Regular';
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.5);
+ }
+ .burger_title {
+    
+    height: 115px;
+    font-family:'Gagalin-Regular';
+    font-size: 72px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.89;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+ }
+ .burger__order {
+     display: flex;
+     flex-direction: row;
+     
+     align-items: baseline;
+ }
+ .burger_price {
+    width: 202px;
+    height: 52px;
+    font-family: 'Gagalin-Regular' ;
+    font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.93;
+    letter-spacing: -0.75px;
+    text-align: center;
+    color: #e35028;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    &_500 {
+        font-size: 72px;
+        letter-spacing: -1.8px;
+    }
+ }
+ .burger_text_area {
+    width: 441px;
+    height: 86px;
+    @include ubuntu();
+    font-size: 14px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: 36px;
+    margin-top: 56px;
+  
+ }
+ .burger__desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+ }
+.order__btn {
+    margin-left: 29px;
+}
+.cons__beef_icon {
+    width: 44px;
+    height: 39px;
+}
+@each $cons in beef, loaf, salad, sauce, veg, cheese {
+    .cons__#{$cons} {
+        &::before {
+            content: url(../../img/sprite/#{$cons}.svg);
+            display: inline-block;
+            position: relative;
+            width: 44px;
+            height: 39px;
+            margin-bottom: 10px;
+            top: 10px;  
+            &:last-child {
+                margin-bottom: 0;
+            }
+         &:after {
+             content: "300";
+             width: 33px;
+             height: 10px;
+             @include ubuntu();
+             font-size: 14px;
+             font-weight: 300;
+             font-stretch: normal;
+             font-style: normal;
+             line-height: 1.71;
+             letter-spacing: normal;
+             text-align: right;
+             color: #2f3234;
+           
+         }     
+           
+        }
+    }
+}
+.const__desc {
+    margin-bottom: 38px;
+}
